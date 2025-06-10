@@ -21,6 +21,8 @@ USE `hopi_hari_db` ;
 -- -----------------------------------------------------
 -- Table `hopi_hari_db`.`areas`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `hopi_hari_db`.`areas` ;
+
 CREATE TABLE IF NOT EXISTS `hopi_hari_db`.`areas` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
@@ -33,6 +35,8 @@ COLLATE = utf8mb4_unicode_ci;
 -- -----------------------------------------------------
 -- Table `hopi_hari_db`.`rides`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `hopi_hari_db`.`rides` ;
+
 CREATE TABLE IF NOT EXISTS `hopi_hari_db`.`rides` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
@@ -54,6 +58,8 @@ COLLATE = utf8mb4_unicode_ci;
 -- -----------------------------------------------------
 -- Table `hopi_hari_db`.`users`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `hopi_hari_db`.`users` ;
+
 CREATE TABLE IF NOT EXISTS `hopi_hari_db`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(50) NOT NULL,
@@ -75,6 +81,8 @@ COLLATE = utf8mb4_unicode_ci;
 -- -----------------------------------------------------
 -- Table `hopi_hari_db`.`lines`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `hopi_hari_db`.`lines` ;
+
 CREATE TABLE IF NOT EXISTS `hopi_hari_db`.`lines` (
   `id_ride` INT NOT NULL,
   `id_user` INT NOT NULL,
@@ -96,6 +104,8 @@ COLLATE = utf8mb4_unicode_ci;
 -- -----------------------------------------------------
 -- Table `hopi_hari_db`.`notifications`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `hopi_hari_db`.`notifications` ;
+
 CREATE TABLE IF NOT EXISTS `hopi_hari_db`.`notifications` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(200) NOT NULL,
@@ -118,6 +128,9 @@ COLLATE = utf8mb4_unicode_ci;
 USE `hopi_hari_db`;
 
 DELIMITER $$
+
+USE `hopi_hari_db`$$
+DROP TRIGGER IF EXISTS `hopi_hari_db`.`after_insert_lines` $$
 USE `hopi_hari_db`$$
 CREATE
 DEFINER=`root`@`localhost`
